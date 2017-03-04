@@ -5,6 +5,10 @@
  */
 package basedatos.inge;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author campitos
@@ -84,8 +88,12 @@ public class Ingresar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
-        // TODO add your handling code here:
-        
+        try {
+            // Aqui ira la conexion:
+      
+        } catch (Exception ex) {
+       
+        }
     }//GEN-LAST:event_ingresarActionPerformed
 
     /**
