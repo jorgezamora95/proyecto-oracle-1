@@ -4,7 +4,7 @@
 <!-- -->
 ### Que es Scrum
 Aqui vas a describir que es scrum etc etc
-
+<center>
 ![Esta es una imagen](https://www.scrumalliance.org/scrum/media/ScrumAllianceMedia/PageGraphics/ScrumExplained-4-620.jpg)
-
+</center>
   
