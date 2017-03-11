@@ -5,18 +5,20 @@
  */
 package basedatos.inge;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author campitos
  */
-public class FormularioContacto extends javax.swing.JFrame {
+public class FormularioCrearTabla extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormularioContacto
+     * Creates new form FormularioCrearTabla
      */
-    public FormularioContacto() {
+    public FormularioCrearTabla() {
         initComponents();
     }
 
@@ -29,14 +31,14 @@ public class FormularioContacto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        guardarRegistro = new javax.swing.JButton();
+        botonCrear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        guardarRegistro.setText("guardar registro");
-        guardarRegistro.addActionListener(new java.awt.event.ActionListener() {
+        botonCrear.setText("crear tabla");
+        botonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guardarRegistroActionPerformed(evt);
+                botonCrearActionPerformed(evt);
             }
         });
 
@@ -45,31 +47,30 @@ public class FormularioContacto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(149, 149, 149)
-                .addComponent(guardarRegistro)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(156, 156, 156)
+                .addComponent(botonCrear)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(guardarRegistro)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(botonCrear)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void guardarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarRegistroActionPerformed
-        // TODO add your handling code here:
+    private void botonCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearActionPerformed
         try {
             // TODO add your handling code here:
-            OperacionesSQL.insertarRegistro();
-            JOptionPane.showConfirmDialog(this, "Guardado");
+            OperacionesSQL.crearTablas();
+            JOptionPane.showConfirmDialog(this, "Tabla generada");
         } catch (Exception ex) {
              JOptionPane.showConfirmDialog(this, ex.getMessage());
         }
-    }//GEN-LAST:event_guardarRegistroActionPerformed
+    }//GEN-LAST:event_botonCrearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,25 +89,25 @@ public class FormularioContacto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioContacto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCrearTabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioContacto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCrearTabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioContacto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCrearTabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioContacto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioCrearTabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioContacto().setVisible(true);
+                new FormularioCrearTabla().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton guardarRegistro;
+    private javax.swing.JButton botonCrear;
     // End of variables declaration//GEN-END:variables
 }
