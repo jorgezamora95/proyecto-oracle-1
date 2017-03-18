@@ -14,9 +14,9 @@ import java.sql.*;
 public class OperacionesSQL {
 
     public static void crearTablas() throws Exception {
-        Connection con = Conexion.conexion("root", "root");
+        Connection con = Conexion.conexion("root", "");
         Statement st = con.createStatement();
-        st.execute("CREATE TABLE PRIMERA(ID INTEGER, NOMBRE VARCHAR(20))");
+   st.execute("CREATE TABLE PRIMERA(ID INTEGER, NOMBRE VARCHAR(20))");
         con.close();
     }
 

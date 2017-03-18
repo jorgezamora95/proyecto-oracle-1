@@ -8,3 +8,6 @@
  * Created: Mar 3, 2017
  */
 
+describe PRIMERA;
+
+select * from mensaje;
