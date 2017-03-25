@@ -32,6 +32,9 @@ public class Autenticarse extends javax.swing.JFrame {
     private void initComponents() {
 
         autemticarse = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        textoLogin = new javax.swing.JTextField();
+        estatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,21 +45,38 @@ public class Autenticarse extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Login");
+
+        estatus.setText("Estatus");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(129, 129, 129)
-                .addComponent(autemticarse)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(autemticarse)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(textoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(estatus, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(textoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(estatus)
+                .addGap(26, 26, 26)
                 .addComponent(autemticarse)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -65,11 +85,14 @@ public class Autenticarse extends javax.swing.JFrame {
     private void autemticarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autemticarseActionPerformed
         try {
             // TODO add your handling code here:
-            Conexion.conexion("root", "");
-         JOptionPane.showConfirmDialog(this, "Ingresaste bien");
+            Conexion.conexion(textoLogin.getText(), "root");
+         //Si se metio el login correcto cerrar esta ventana
+         dispose();
+         FormularioContacto x=new FormularioContacto();
+         x.setVisible(true); 
          
         } catch (Exception ex) {
-          JOptionPane.showConfirmDialog(this, "algo estuvo mal");
+         estatus.setText("Datos incorrectos"); 
         }
         
         
@@ -112,5 +135,8 @@ public class Autenticarse extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton autemticarse;
+    private javax.swing.JLabel estatus;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField textoLogin;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,4 +10,6 @@
 
 describe PRIMERA;
 
+select * from PRIMERA;
+
 select * from mensaje;
